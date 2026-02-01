@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tickets>
+  <ticket>
+    <customer_id>XML001</customer_id>
+    <customer_email>xml1@test.com</customer_email>
+    <customer_name>XML User 1</customer_name>
+    <subject>Login credentials invalid</subject>
+    <description>My username and password are not being accepted by the system</description>
+    <category>account_access</category>
+    <priority>urgent</priority>
+    <tags>login,credentials</tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Chrome</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML002</customer_id>
+    <customer_email>xml2@test.com</customer_email>
+    <customer_name>XML User 2</customer_name>
+    <subject>System crashes on data import</subject>
+    <description>The system crashes whenever I try to import a CSV file</description>
+    <category>technical_issue</category>
+    <priority>high</priority>
+    <tags>crash,import</tags>
+    <metadata>
+      <source>email</source>
+      <browser>Firefox</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML003</customer_id>
+    <customer_email>xml3@test.com</customer_email>
+    <customer_name>XML User 3</customer_name>
+    <subject>Double charged this month</subject>
+    <description>I was charged twice for my monthly subscription fee</description>
+    <category>billing_question</category>
+    <priority>high</priority>
+    <tags>billing,duplicate</tags>
+    <metadata>
+      <source>phone</source>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML004</customer_id>
+    <customer_email>xml4@test.com</customer_email>
+    <customer_name>XML User 4</customer_name>
+    <subject>Add export to PDF</subject>
+    <description>Would be great to have an option to export reports as PDF files</description>
+    <category>feature_request</category>
+    <priority>medium</priority>
+    <tags>export,pdf</tags>
+    <metadata>
+      <source>api</source>
+      <browser>Safari</browser>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML005</customer_id>
+    <customer_email>xml5@test.com</customer_email>
+    <customer_name>XML User 5</customer_name>
+    <subject>Search function defect</subject>
+    <description>Steps to reproduce: enter search term, click search, expected: results shown, actual: blank page</description>
+    <category>bug_report</category>
+    <priority>high</priority>
+    <tags>search,bug</tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Edge</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML006</customer_id>
+    <customer_email>xml6@test.com</customer_email>
+    <customer_name>XML User 6</customer_name>
+    <subject>Cannot enable two-factor auth</subject>
+    <description>Two factor authentication setup fails at the verification step</description>
+    <category>account_access</category>
+    <priority>medium</priority>
+    <tags>2fa,security</tags>
+    <metadata>
+      <source>chat</source>
+      <browser>Chrome</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML007</customer_id>
+    <customer_email>xml7@test.com</customer_email>
+    <customer_name>XML User 7</customer_name>
+    <subject>Server error 500</subject>
+    <description>Getting internal server error when accessing the settings page</description>
+    <category>technical_issue</category>
+    <priority>urgent</priority>
+    <tags>error,500</tags>
+    <metadata>
+      <source>email</source>
+      <browser>Firefox</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML008</customer_id>
+    <customer_email>xml8@test.com</customer_email>
+    <customer_name>XML User 8</customer_name>
+    <subject>Invoice not received</subject>
+    <description>I have not received my monthly invoice for the past two months</description>
+    <category>billing_question</category>
+    <priority>medium</priority>
+    <tags>invoice,missing</tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Safari</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML009</customer_id>
+    <customer_email>xml9@test.com</customer_email>
+    <customer_name>XML User 9</customer_name>
+    <subject>Integration with Zapier</subject>
+    <description>Please add Zapier integration for workflow automation</description>
+    <category>feature_request</category>
+    <priority>low</priority>
+    <tags>integration,zapier</tags>
+    <metadata>
+      <source>api</source>
+      <browser>Chrome</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML010</customer_id>
+    <customer_email>xml10@test.com</customer_email>
+    <customer_name>XML User 10</customer_name>
+    <subject>Form validation error</subject>
+    <description>Form accepts invalid phone number formats without validation</description>
+    <category>bug_report</category>
+    <priority>medium</priority>
+    <tags>validation,form</tags>
+    <metadata>
+      <source>chat</source>
+      <browser>Edge</browser>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML011</customer_id>
+    <customer_email>xml11@test.com</customer_email>
+    <customer_name>XML User 11</customer_name>
+    <subject>Account deletion request</subject>
+    <description>I want to permanently delete my account and all associated data</description>
+    <category>account_access</category>
+    <priority>low</priority>
+    <tags>deletion,account</tags>
+    <metadata>
+      <source>email</source>
+      <browser>Firefox</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML012</customer_id>
+    <customer_email>xml12@test.com</customer_email>
+    <customer_name>XML User 12</customer_name>
+    <subject>Memory leak detected</subject>
+    <description>Application memory usage increases continuously until crash</description>
+    <category>technical_issue</category>
+    <priority>urgent</priority>
+    <tags>memory,leak</tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Chrome</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML013</customer_id>
+    <customer_email>xml13@test.com</customer_email>
+    <customer_name>XML User 13</customer_name>
+    <subject>Credit card update failed</subject>
+    <description>Unable to update my credit card information in the billing section</description>
+    <category>billing_question</category>
+    <priority>high</priority>
+    <tags>payment,update</tags>
+    <metadata>
+      <source>phone</source>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML014</customer_id>
+    <customer_email>xml14@test.com</customer_email>
+    <customer_name>XML User 14</customer_name>
+    <subject>Add GraphQL API support</subject>
+    <description>Would like to see GraphQL API in addition to REST API</description>
+    <category>feature_request</category>
+    <priority>medium</priority>
+    <tags>api,graphql</tags>
+    <metadata>
+      <source>api</source>
+      <browser>Safari</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML015</customer_id>
+    <customer_email>xml15@test.com</customer_email>
+    <customer_name>XML User 15</customer_name>
+    <subject>Drag and drop not working</subject>
+    <description>Drag and drop functionality does not work on Firefox browser</description>
+    <category>bug_report</category>
+    <priority>medium</priority>
+    <tags>drag,drop</tags>
+    <metadata>
+      <source>chat</source>
+      <browser>Firefox</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML016</customer_id>
+    <customer_email>xml16@test.com</customer_email>
+    <customer_name>XML User 16</customer_name>
+    <subject>Session expired too quickly</subject>
+    <description>My session expires after just 5 minutes of inactivity</description>
+    <category>account_access</category>
+    <priority>medium</priority>
+    <tags>session,timeout</tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Edge</browser>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML017</customer_id>
+    <customer_email>xml17@test.com</customer_email>
+    <customer_name>XML User 17</customer_name>
+    <subject>Connection timeout</subject>
+    <description>Connection times out when uploading large files over 100MB</description>
+    <category>technical_issue</category>
+    <priority>high</priority>
+    <tags>timeout,upload</tags>
+    <metadata>
+      <source>email</source>
+      <browser>Chrome</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML018</customer_id>
+    <customer_email>xml18@test.com</customer_email>
+    <customer_name>XML User 18</customer_name>
+    <subject>Proration calculation</subject>
+    <description>How is the proration calculated when switching plans mid-month</description>
+    <category>billing_question</category>
+    <priority>low</priority>
+    <tags>proration,billing</tags>
+    <metadata>
+      <source>phone</source>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML019</customer_id>
+    <customer_email>xml19@test.com</customer_email>
+    <customer_name>XML User 19</customer_name>
+    <subject>Real-time collaboration</subject>
+    <description>Add real-time collaboration features for team workspaces</description>
+    <category>feature_request</category>
+    <priority>high</priority>
+    <tags>collaboration,realtime</tags>
+    <metadata>
+      <source>api</source>
+      <browser>Safari</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML020</customer_id>
+    <customer_email>xml20@test.com</customer_email>
+    <customer_name>XML User 20</customer_name>
+    <subject>Infinite scroll broken</subject>
+    <description>Infinite scroll does not load more items when reaching bottom</description>
+    <category>bug_report</category>
+    <priority>high</priority>
+    <tags>scroll,loading</tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Firefox</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML021</customer_id>
+    <customer_email>xml21@test.com</customer_email>
+    <customer_name>XML User 21</customer_name>
+    <subject>Email verification pending</subject>
+    <description>Email verification link expired before I could click it</description>
+    <category>account_access</category>
+    <priority>medium</priority>
+    <tags>email,verification</tags>
+    <metadata>
+      <source>chat</source>
+      <browser>Chrome</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML022</customer_id>
+    <customer_email>xml22@test.com</customer_email>
+    <customer_name>XML User 22</customer_name>
+    <subject>Database query slow</subject>
+    <description>Database queries are extremely slow during peak hours</description>
+    <category>technical_issue</category>
+    <priority>urgent</priority>
+    <tags>database,performance</tags>
+    <metadata>
+      <source>email</source>
+      <browser>Edge</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML023</customer_id>
+    <customer_email>xml23@test.com</customer_email>
+    <customer_name>XML User 23</customer_name>
+    <subject>Refund status inquiry</subject>
+    <description>What is the status of my refund request submitted last week</description>
+    <category>billing_question</category>
+    <priority>medium</priority>
+    <tags>refund,status</tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Safari</browser>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML024</customer_id>
+    <customer_email>xml24@test.com</customer_email>
+    <customer_name>XML User 24</customer_name>
+    <subject>Offline mode support</subject>
+    <description>Add offline mode support for mobile application</description>
+    <category>feature_request</category>
+    <priority>medium</priority>
+    <tags>offline,mobile</tags>
+    <metadata>
+      <source>api</source>
+      <browser>Chrome</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML025</customer_id>
+    <customer_email>xml25@test.com</customer_email>
+    <customer_name>XML User 25</customer_name>
+    <subject>Modal dialog not closing</subject>
+    <description>Modal dialog remains open even after clicking close button</description>
+    <category>bug_report</category>
+    <priority>medium</priority>
+    <tags>modal,ui</tags>
+    <metadata>
+      <source>chat</source>
+      <browser>Firefox</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML026</customer_id>
+    <customer_email>xml26@test.com</customer_email>
+    <customer_name>XML User 26</customer_name>
+    <subject>Cannot change username</subject>
+    <description>Username change option is greyed out in account settings</description>
+    <category>account_access</category>
+    <priority>low</priority>
+    <tags>username,settings</tags>
+    <metadata>
+      <source>email</source>
+      <browser>Edge</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML027</customer_id>
+    <customer_email>xml27@test.com</customer_email>
+    <customer_name>XML User 27</customer_name>
+    <subject>SSL certificate warning</subject>
+    <description>Browser shows SSL certificate warning when accessing site</description>
+    <category>technical_issue</category>
+    <priority>urgent</priority>
+    <tags>ssl,security</tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Safari</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML028</customer_id>
+    <customer_email>xml28@test.com</customer_email>
+    <customer_name>XML User 28</customer_name>
+    <subject>Promotional code invalid</subject>
+    <description>My promotional discount code shows as invalid or expired</description>
+    <category>billing_question</category>
+    <priority>medium</priority>
+    <tags>promo,discount</tags>
+    <metadata>
+      <source>phone</source>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML029</customer_id>
+    <customer_email>xml29@test.com</customer_email>
+    <customer_name>XML User 29</customer_name>
+    <subject>Multi-language support</subject>
+    <description>Add support for French and German languages</description>
+    <category>feature_request</category>
+    <priority>low</priority>
+    <tags>language,localization</tags>
+    <metadata>
+      <source>api</source>
+      <browser>Chrome</browser>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>XML030</customer_id>
+    <customer_email>xml30@test.com</customer_email>
+    <customer_name>XML User 30</customer_name>
+    <subject>Stack trace visible</subject>
+    <description>Full stack trace is visible to users when errors occur</description>
+    <category>bug_report</category>
+    <priority>urgent</priority>
+    <tags>security,error</tags>
+    <metadata>
+      <source>chat</source>
+      <browser>Firefox</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+</tickets>

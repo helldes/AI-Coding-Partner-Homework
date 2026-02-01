@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Ticket {
+  id              String   @id @default(uuid())
+  customerId      String   @map("customer_id")
+  customerEmail   String   @map("customer_email")
+  customerName    String   @map("customer_name")
+  subject         String
+  description     String
+  category        Category
+  priority        Priority
+  status          Status   @default(NEW)
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+  resolvedAt      DateTime? @map("resolved_at")
+  assignedTo      String?  @map("assigned_to")
+  tags            String[]
+  source          String
+  browser         String?
+  deviceType      String?  @map("device_type")
+
+  classificationConfidence Float?   @map("classification_confidence")
+  classificationReasoning  String?  @map("classification_reasoning")
+  classificationKeywords   String[] @map("classification_keywords")
+
+  @@map("tickets")
+}
+
+enum Category {
+  ACCOUNT_ACCESS
+  TECHNICAL_ISSUE
+  BILLING_QUESTION
+  FEATURE_REQUEST
+  BUG_REPORT
+  OTHER
+}
+
+enum Priority {
+  URGENT
+  HIGH
+  MEDIUM
+  LOW
+}
+
+enum Status {
+  NEW
+  IN_PROGRESS
+  WAITING_CUSTOMER
+  RESOLVED
+  CLOSED
+}

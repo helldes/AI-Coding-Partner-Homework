@@ -1,0 +1,299 @@
+[
+  {
+    "customer_id": "JSON001",
+    "customer_email": "user1@jsontest.com",
+    "customer_name": "JSON User 1",
+    "subject": "Cannot access dashboard",
+    "description": "I am unable to login to the dashboard with my credentials",
+    "category": "account_access",
+    "priority": "urgent",
+    "tags": ["login", "dashboard"],
+    "metadata": {
+      "source": "web_form",
+      "browser": "Chrome",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "JSON002",
+    "customer_email": "user2@jsontest.com",
+    "customer_name": "JSON User 2",
+    "subject": "Application freezes",
+    "description": "The application freezes when I try to export large datasets",
+    "category": "technical_issue",
+    "priority": "high",
+    "tags": ["freeze", "export"],
+    "metadata": {
+      "source": "email",
+      "browser": "Firefox",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "JSON003",
+    "customer_email": "user3@jsontest.com",
+    "customer_name": "JSON User 3",
+    "subject": "Incorrect invoice amount",
+    "description": "The invoice I received shows an incorrect total amount",
+    "category": "billing_question",
+    "priority": "medium",
+    "tags": ["invoice", "billing"],
+    "metadata": {
+      "source": "api",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "JSON004",
+    "customer_email": "user4@jsontest.com",
+    "customer_name": "JSON User 4",
+    "subject": "Request for export feature",
+    "description": "Would like to have an export to Excel feature for reports",
+    "category": "feature_request",
+    "priority": "low",
+    "tags": ["export", "excel"],
+    "metadata": {
+      "source": "chat",
+      "browser": "Safari",
+      "device_type": "tablet"
+    }
+  },
+  {
+    "customer_id": "JSON005",
+    "customer_email": "user5@jsontest.com",
+    "customer_name": "JSON User 5",
+    "subject": "Filter not working",
+    "description": "Steps to reproduce: 1. Apply date filter 2. Click apply. Expected: filtered results. Actual: all results shown",
+    "category": "bug_report",
+    "priority": "high",
+    "tags": ["filter", "bug"],
+    "metadata": {
+      "source": "web_form",
+      "browser": "Edge",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "JSON006",
+    "customer_email": "user6@jsontest.com",
+    "customer_name": "JSON User 6",
+    "subject": "Password reset not working",
+    "description": "I requested a password reset but did not receive the email",
+    "category": "account_access",
+    "priority": "urgent",
+    "tags": ["password", "reset"],
+    "metadata": {
+      "source": "phone",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "JSON007",
+    "customer_email": "user7@jsontest.com",
+    "customer_name": "JSON User 7",
+    "subject": "Error 404 on reports page",
+    "description": "Getting a 404 error when trying to access the reports page",
+    "category": "technical_issue",
+    "priority": "high",
+    "tags": ["error", "404"],
+    "metadata": {
+      "source": "email",
+      "browser": "Chrome",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "JSON008",
+    "customer_email": "user8@jsontest.com",
+    "customer_name": "JSON User 8",
+    "subject": "Subscription cancellation",
+    "description": "I would like to cancel my subscription effective immediately",
+    "category": "billing_question",
+    "priority": "medium",
+    "tags": ["subscription", "cancel"],
+    "metadata": {
+      "source": "web_form",
+      "browser": "Firefox",
+      "device_type": "tablet"
+    }
+  },
+  {
+    "customer_id": "JSON009",
+    "customer_email": "user9@jsontest.com",
+    "customer_name": "JSON User 9",
+    "subject": "Add calendar integration",
+    "description": "Please add Google Calendar integration for scheduling",
+    "category": "feature_request",
+    "priority": "medium",
+    "tags": ["calendar", "integration"],
+    "metadata": {
+      "source": "api",
+      "browser": "Safari",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "JSON010",
+    "customer_email": "user10@jsontest.com",
+    "customer_name": "JSON User 10",
+    "subject": "Duplicate entries created",
+    "description": "Creating a single record results in duplicate entries in the database",
+    "category": "bug_report",
+    "priority": "urgent",
+    "tags": ["duplicate", "database"],
+    "metadata": {
+      "source": "chat",
+      "browser": "Chrome",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "JSON011",
+    "customer_email": "user11@jsontest.com",
+    "customer_name": "JSON User 11",
+    "subject": "Account verification email",
+    "description": "Did not receive account verification email after signup",
+    "category": "account_access",
+    "priority": "high",
+    "tags": ["verification", "email"],
+    "metadata": {
+      "source": "web_form",
+      "browser": "Edge",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "JSON012",
+    "customer_email": "user12@jsontest.com",
+    "customer_name": "JSON User 12",
+    "subject": "Slow query performance",
+    "description": "Database queries are taking over 10 seconds to complete",
+    "category": "technical_issue",
+    "priority": "urgent",
+    "tags": ["performance", "database"],
+    "metadata": {
+      "source": "email",
+      "browser": "Chrome",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "JSON013",
+    "customer_email": "user13@jsontest.com",
+    "customer_name": "JSON User 13",
+    "subject": "Refund processing time",
+    "description": "How long does it take to process a refund request",
+    "category": "billing_question",
+    "priority": "low",
+    "tags": ["refund", "processing"],
+    "metadata": {
+      "source": "phone",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "JSON014",
+    "customer_email": "user14@jsontest.com",
+    "customer_name": "JSON User 14",
+    "subject": "Bulk upload feature",
+    "description": "Add support for bulk uploading CSV files with multiple records",
+    "category": "feature_request",
+    "priority": "high",
+    "tags": ["bulk", "upload"],
+    "metadata": {
+      "source": "api",
+      "browser": "Firefox",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "JSON015",
+    "customer_email": "user15@jsontest.com",
+    "customer_name": "JSON User 15",
+    "subject": "Pagination broken",
+    "description": "Pagination controls do not work on the users list page",
+    "category": "bug_report",
+    "priority": "medium",
+    "tags": ["pagination", "ui"],
+    "metadata": {
+      "source": "web_form",
+      "browser": "Safari",
+      "device_type": "tablet"
+    }
+  },
+  {
+    "customer_id": "JSON016",
+    "customer_email": "user16@jsontest.com",
+    "customer_name": "JSON User 16",
+    "subject": "Locked account",
+    "description": "My account has been locked due to suspicious activity",
+    "category": "account_access",
+    "priority": "urgent",
+    "tags": ["locked", "security"],
+    "metadata": {
+      "source": "chat",
+      "browser": "Chrome",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "JSON017",
+    "customer_email": "user17@jsontest.com",
+    "customer_name": "JSON User 17",
+    "subject": "API authentication failing",
+    "description": "API requests are failing with 401 unauthorized error",
+    "category": "technical_issue",
+    "priority": "high",
+    "tags": ["api", "auth"],
+    "metadata": {
+      "source": "email",
+      "browser": "Edge",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "JSON018",
+    "customer_email": "user18@jsontest.com",
+    "customer_name": "JSON User 18",
+    "subject": "Payment declined",
+    "description": "My payment was declined but my card has sufficient funds",
+    "category": "billing_question",
+    "priority": "high",
+    "tags": ["payment", "declined"],
+    "metadata": {
+      "source": "web_form",
+      "browser": "Chrome",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "JSON019",
+    "customer_email": "user19@jsontest.com",
+    "customer_name": "JSON User 19",
+    "subject": "Dark mode theme",
+    "description": "Please add a dark mode theme option to reduce eye strain",
+    "category": "feature_request",
+    "priority": "low",
+    "tags": ["theme", "dark mode"],
+    "metadata": {
+      "source": "api",
+      "browser": "Firefox",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "JSON020",
+    "customer_email": "user20@jsontest.com",
+    "customer_name": "JSON User 20",
+    "subject": "Chart rendering error",
+    "description": "Charts are not rendering correctly on dashboard",
+    "category": "bug_report",
+    "priority": "medium",
+    "tags": ["chart", "rendering"],
+    "metadata": {
+      "source": "chat",
+      "browser": "Safari",
+      "device_type": "tablet"
+    }
+  }
+]
