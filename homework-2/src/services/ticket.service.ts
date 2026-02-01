@@ -26,6 +26,36 @@ const statusMap: Record<string, string> = {
   'closed': 'CLOSED'
 };
 
+function safeMapCategory(category?: string): string {
+  if (!category) return 'OTHER';
+  const mapped = categoryMap[category];
+  if (!mapped) {
+    console.warn(`Invalid category '${category}', defaulting to OTHER`);
+    return 'OTHER';
+  }
+  return mapped;
+}
+
+function safeMapPriority(priority?: string): string {
+  if (!priority) return 'MEDIUM';
+  const mapped = priorityMap[priority];
+  if (!mapped) {
+    console.warn(`Invalid priority '${priority}', defaulting to MEDIUM`);
+    return 'MEDIUM';
+  }
+  return mapped;
+}
+
+function safeMapStatus(status?: string): string {
+  if (!status) return 'NEW';
+  const mapped = statusMap[status];
+  if (!mapped) {
+    console.warn(`Invalid status '${status}', defaulting to NEW`);
+    return 'NEW';
+  }
+  return mapped;
+}
+
 export class TicketService {
   async createTicket(data: CreateTicketDTO, autoClassify: boolean = true): Promise<any> {
     let category = data.category;
@@ -52,9 +82,9 @@ export class TicketService {
         customerName: data.customer_name,
         subject: data.subject,
         description: data.description,
-        category: categoryMap[category!] as any,
-        priority: priorityMap[priority!] as any,
-        status: data.status ? statusMap[data.status] as any : 'NEW',
+        category: safeMapCategory(category) as any,
+        priority: safeMapPriority(priority) as any,
+        status: safeMapStatus(data.status) as any,
         assignedTo: data.assigned_to,
         tags: data.tags || [],
         source: data.metadata.source,
@@ -70,9 +100,9 @@ export class TicketService {
   async getTickets(filters?: any): Promise<any[]> {
     const where: any = {};
 
-    if (filters?.category) where.category = categoryMap[filters.category];
-    if (filters?.priority) where.priority = priorityMap[filters.priority];
-    if (filters?.status) where.status = statusMap[filters.status];
+    if (filters?.category) where.category = safeMapCategory(filters.category);
+    if (filters?.priority) where.priority = safeMapPriority(filters.priority);
+    if (filters?.status) where.status = safeMapStatus(filters.status);
     if (filters?.customer_id) where.customerId = filters.customer_id;
     if (filters?.assigned_to) where.assignedTo = filters.assigned_to;
 
@@ -91,9 +121,9 @@ export class TicketService {
     if (data.customer_name) updateData.customerName = data.customer_name;
     if (data.subject) updateData.subject = data.subject;
     if (data.description) updateData.description = data.description;
-    if (data.category) updateData.category = categoryMap[data.category];
-    if (data.priority) updateData.priority = priorityMap[data.priority];
-    if (data.status) updateData.status = statusMap[data.status];
+    if (data.category) updateData.category = safeMapCategory(data.category);
+    if (data.priority) updateData.priority = safeMapPriority(data.priority);
+    if (data.status) updateData.status = safeMapStatus(data.status);
     if (data.assigned_to !== undefined) updateData.assignedTo = data.assigned_to;
     if (data.tags) updateData.tags = data.tags;
     if (data.resolved_at) updateData.resolvedAt = new Date(data.resolved_at);
@@ -121,8 +151,8 @@ export class TicketService {
     return prisma.ticket.update({
       where: { id },
       data: {
-        category: categoryMap[result.category] as any,
-        priority: priorityMap[result.priority] as any,
+        category: safeMapCategory(result.category) as any,
+        priority: safeMapPriority(result.priority) as any,
         classificationConfidence: result.confidence,
         classificationReasoning: result.reasoning,
         classificationKeywords: result.keywords

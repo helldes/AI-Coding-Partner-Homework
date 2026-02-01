@@ -71,10 +71,10 @@ CUST001,test@example.com,John Doe,Login issue,Cannot access my account,web_form
 CUST002,invalid-email,Jane Doe,Test,Description here,email
 CUST003,valid@example.com,Bob Smith,Issue,Valid description here,api`;
 
-    const result = await importService.parseCSV(Buffer.from(csvData));
+    const tickets = await importService.extractValidTicketsFromCSV(Buffer.from(csvData));
 
-    expect(result.validTickets.length).toBe(2);
-    expect(result.validTickets[0].customer_id).toBe('CUST001');
-    expect(result.validTickets[1].customer_id).toBe('CUST003');
+    expect(tickets.length).toBe(2);
+    expect(tickets[0].customer_id).toBe('CUST001');
+    expect(tickets[1].customer_id).toBe('CUST003');
   });
 });

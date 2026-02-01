@@ -104,5 +104,4 @@ export interface ImportResult {
     row: number;
     error: string;
   }>;
-  validTickets: CreateTicketDTO[];
 }

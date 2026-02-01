@@ -6,11 +6,12 @@ import { CreateTicketSchema, UpdateTicketSchema, TicketFilterSchema } from '../u
 import { z } from 'zod';
 
 const router = Router();
-const upload = multer({ 
+const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
-    fileSize: 10 * 1024 * 1024 // 10MB limit
-  }
+    fileSize: 10 * 1024 * 1024, // 10 MB max file size
+    files: 1, // Only allow 1 file per request
+  },
 });
 
 router.post('/', async (req: Request, res: Response): Promise<void> => {
@@ -52,9 +53,31 @@ router.post('/import', upload.single('file'), async (req: Request, res: Response
         return;
     }
 
-    await ticketService.bulkCreateTickets(validationResult.validTickets);
+    if (validationResult.successful > 0) {
+      const tickets = await (fileExtension === 'csv'
+        ? importService.extractValidTicketsFromCSV(req.file.buffer)
+        : fileExtension === 'json'
+        ? importService.extractValidTicketsFromJSON(req.file.buffer)
+        : importService.extractValidTicketsFromXML(req.file.buffer));
+
+      const result = await ticketService.bulkCreateTickets(tickets);
+
+      if (result.length < validationResult.successful) {
+        validationResult.failed += validationResult.successful - result.length;
+        validationResult.successful = result.length;
+        validationResult.errors.push({
+          row: 0,
+          error: `${validationResult.successful - result.length} tickets failed to save to database`
+        });
+      }
+    }
+
     res.status(200).json(validationResult);
   } catch (error) {
+    if (error instanceof Error && error.message.includes('File too large')) {
+      res.status(413).json({ error: 'File too large. Maximum size is 10MB' });
+      return;
+    }
     res.status(500).json({ error: 'Import failed', details: error instanceof Error ? error.message : 'Unknown error' });
   }
 });

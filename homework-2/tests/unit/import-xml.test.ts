@@ -105,16 +105,16 @@ describe('XML Import', () => {
   </ticket>
 </tickets>`;
 
-    const result = await importService.parseXML(Buffer.from(xmlData));
+    const tickets = await importService.extractValidTicketsFromXML(Buffer.from(xmlData));
 
-    expect(result.validTickets.length).toBe(1);
-    expect(result.validTickets[0].customer_id).toBe('CUST001');
+    expect(tickets.length).toBe(1);
+    expect(tickets[0].customer_id).toBe('CUST001');
   });
 
   it('should handle malformed XML in extract method', async () => {
-    const result = await importService.parseXML(Buffer.from('<invalid>'));
+    const tickets = await importService.extractValidTicketsFromXML(Buffer.from('<invalid>'));
 
-    expect(result.validTickets.length).toBe(0);
+    expect(tickets.length).toBe(0);
   });
 
   it('should handle XML with tags', async () => {
@@ -131,9 +131,9 @@ describe('XML Import', () => {
   </ticket>
 </tickets>`;
 
-    const result = await importService.parseXML(Buffer.from(xmlData));
+    const tickets = await importService.extractValidTicketsFromXML(Buffer.from(xmlData));
 
-    expect(result.validTickets.length).toBe(1);
-    expect(result.validTickets[0].tags).toEqual(['urgent', 'payment']);
+    expect(tickets.length).toBe(1);
+    expect(tickets[0].tags).toEqual(['urgent', 'payment']);
   });
 });

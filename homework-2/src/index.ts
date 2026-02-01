@@ -10,8 +10,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
-app.use(express.json({ limit: '1mb' }));
-app.use(express.urlencoded({ extended: true, limit: '1mb' }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use('/tickets', ticketsRouter);
 
@@ -28,22 +28,31 @@ if (process.env.NODE_ENV !== 'test') {
   });
 }
 
-process.on('SIGINT', async () => {
-  console.log('Shutting down gracefully...');
-  await disconnectDatabase();
-  if (server) {
-    await new Promise<void>((resolve) => server.close(() => resolve()));
-  }
-  process.exit(0);
-});
+async function gracefulShutdown(signal: string) {
+  console.log(`${signal} received. Shutting down gracefully...`);
 
-process.on('SIGTERM', async () => {
-  console.log('Shutting down gracefully...');
-  await disconnectDatabase();
-  if (server) {
-    await new Promise<void>((resolve) => server.close(() => resolve()));
+  try {
+    if (server) {
+      await new Promise<void>((resolve, reject) => {
+        server.close((err: Error) => {
+          if (err) reject(err);
+          else resolve();
+        });
+      });
+      console.log('Server closed. No longer accepting connections.');
+    }
+
+    await disconnectDatabase();
+    console.log('Database disconnected.');
+
+    process.exit(0);
+  } catch (error) {
+    console.error('Error during shutdown:', error);
+    process.exit(1);
   }
-  process.exit(0);
-});
+}
+
+process.on('SIGINT', () => gracefulShutdown('SIGINT'));
+process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
 
 export default app;
