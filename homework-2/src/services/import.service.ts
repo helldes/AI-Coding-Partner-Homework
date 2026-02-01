@@ -9,6 +9,7 @@ export class ImportService {
     const errors: Array<{ row: number; error: string }> = [];
     let rowNumber = 0;
     let successful = 0;
+    const validTickets: CreateTicketDTO[] = [];
 
     return new Promise((resolve) => {
       const stream = Readable.from(fileBuffer.toString());
@@ -20,6 +21,7 @@ export class ImportService {
           try {
             const ticket = this.mapCsvToTicket(data);
             CreateTicketSchema.parse(ticket);
+            validTickets.push(ticket);
             successful++;
           } catch (error) {
             errors.push({
@@ -33,7 +35,8 @@ export class ImportService {
             total: rowNumber,
             successful,
             failed: errors.length,
-            errors
+            errors,
+            validTickets
           });
         })
         .on('error', (error: Error) => {
@@ -41,33 +44,9 @@ export class ImportService {
             total: rowNumber,
             successful,
             failed: errors.length + 1,
-            errors: [...errors, { row: rowNumber, error: error.message }]
+            errors: [...errors, { row: rowNumber, error: error.message }],
+            validTickets
           });
-        });
-    });
-  }
-
-  async extractValidTicketsFromCSV(fileBuffer: Buffer): Promise<CreateTicketDTO[]> {
-    const validTickets: CreateTicketDTO[] = [];
-
-    return new Promise((resolve) => {
-      const stream = Readable.from(fileBuffer.toString());
-
-      stream
-        .pipe(csv())
-        .on('data', (data: any) => {
-          try {
-            const ticket = this.mapCsvToTicket(data);
-            const validated = CreateTicketSchema.parse(ticket);
-            validTickets.push(validated as any);
-          } catch (error) {
-          }
-        })
-        .on('end', () => {
-          resolve(validTickets);
-        })
-        .on('error', () => {
-          resolve(validTickets);
         });
     });
   }
@@ -75,6 +54,7 @@ export class ImportService {
   async parseJSON(fileBuffer: Buffer): Promise<ImportResult> {
     const errors: Array<{ row: number; error: string }> = [];
     let successful = 0;
+    const validTickets: CreateTicketDTO[] = [];
 
     try {
       const data = JSON.parse(fileBuffer.toString());
@@ -82,7 +62,8 @@ export class ImportService {
 
       tickets.forEach((ticket, index) => {
         try {
-          CreateTicketSchema.parse(ticket);
+          const validated = CreateTicketSchema.parse(ticket);
+          validTickets.push(validated as any);
           successful++;
         } catch (error) {
           errors.push({
@@ -96,50 +77,40 @@ export class ImportService {
         total: tickets.length,
         successful,
         failed: errors.length,
-        errors
+        errors,
+        validTickets
       };
     } catch (error) {
       return {
         total: 0,
         successful: 0,
         failed: 1,
-        errors: [{ row: 0, error: 'Invalid JSON format' }]
+        errors: [{ row: 0, error: 'Invalid JSON format' }],
+        validTickets
       };
     }
-  }
-
-  async extractValidTicketsFromJSON(fileBuffer: Buffer): Promise<CreateTicketDTO[]> {
-    const validTickets: CreateTicketDTO[] = [];
-
-    try {
-      const data = JSON.parse(fileBuffer.toString());
-      const tickets = Array.isArray(data) ? data : [data];
-
-      tickets.forEach((ticket) => {
-        try {
-          const validated = CreateTicketSchema.parse(ticket);
-          validTickets.push(validated as any);
-        } catch (error) {
-        }
-      });
-    } catch (error) {
-    }
-
-    return validTickets;
   }
 
   async parseXML(fileBuffer: Buffer): Promise<ImportResult> {
     const errors: Array<{ row: number; error: string }> = [];
     let successful = 0;
+    const validTickets: CreateTicketDTO[] = [];
 
     return new Promise((resolve) => {
-      parseString(fileBuffer.toString(), (err: Error | null, result: any) => {
+      parseString(fileBuffer.toString(), {
+        strict: true,
+        explicitArray: true,
+        // Security: Reject external entities and DOCTYPE declarations
+        xmlns: false,
+        explicitRoot: true
+      }, (err: Error | null, result: any) => {
         if (err) {
           return resolve({
             total: 0,
             successful: 0,
             failed: 1,
-            errors: [{ row: 0, error: 'Invalid XML format' }]
+            errors: [{ row: 0, error: 'Invalid XML format' }],
+            validTickets
           });
         }
 
@@ -150,7 +121,8 @@ export class ImportService {
           ticketArray.forEach((ticket: any, index: number) => {
             try {
               const mappedTicket = this.mapXmlToTicket(ticket);
-              CreateTicketSchema.parse(mappedTicket);
+              const validated = CreateTicketSchema.parse(mappedTicket);
+              validTickets.push(validated as any);
               successful++;
             } catch (error) {
               errors.push({
@@ -164,45 +136,17 @@ export class ImportService {
             total: ticketArray.length,
             successful,
             failed: errors.length,
-            errors
+            errors,
+            validTickets
           });
         } catch (error) {
           resolve({
             total: 0,
             successful: 0,
             failed: 1,
-            errors: [{ row: 0, error: 'Error processing XML structure' }]
+            errors: [{ row: 0, error: 'Error processing XML structure' }],
+            validTickets
           });
-        }
-      });
-    });
-  }
-
-  async extractValidTicketsFromXML(fileBuffer: Buffer): Promise<CreateTicketDTO[]> {
-    const validTickets: CreateTicketDTO[] = [];
-
-    return new Promise((resolve) => {
-      parseString(fileBuffer.toString(), (err: Error | null, result: any) => {
-        if (err) {
-          return resolve(validTickets);
-        }
-
-        try {
-          const tickets = result.tickets?.ticket || [];
-          const ticketArray = Array.isArray(tickets) ? tickets : [tickets];
-
-          ticketArray.forEach((ticket: any) => {
-            try {
-              const mappedTicket = this.mapXmlToTicket(ticket);
-              const validated = CreateTicketSchema.parse(mappedTicket);
-              validTickets.push(validated as any);
-            } catch (error) {
-            }
-          });
-
-          resolve(validTickets);
-        } catch (error) {
-          resolve(validTickets);
         }
       });
     });

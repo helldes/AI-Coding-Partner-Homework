@@ -6,7 +6,12 @@ import { CreateTicketSchema, UpdateTicketSchema, TicketFilterSchema } from '../u
 import { z } from 'zod';
 
 const router = Router();
-const upload = multer({ storage: multer.memoryStorage() });
+const upload = multer({ 
+  storage: multer.memoryStorage(),
+  limits: {
+    fileSize: 10 * 1024 * 1024 // 10MB limit
+  }
+});
 
 router.post('/', async (req: Request, res: Response): Promise<void> => {
   try {
@@ -31,27 +36,23 @@ router.post('/import', upload.single('file'), async (req: Request, res: Response
 
     const fileExtension = req.file.originalname.split('.').pop()?.toLowerCase();
     let validationResult;
-    let tickets: any[] = [];
 
     switch (fileExtension) {
       case 'csv':
         validationResult = await importService.parseCSV(req.file.buffer);
-        tickets = await importService.extractValidTicketsFromCSV(req.file.buffer);
         break;
       case 'json':
         validationResult = await importService.parseJSON(req.file.buffer);
-        tickets = await importService.extractValidTicketsFromJSON(req.file.buffer);
         break;
       case 'xml':
         validationResult = await importService.parseXML(req.file.buffer);
-        tickets = await importService.extractValidTicketsFromXML(req.file.buffer);
         break;
       default:
         res.status(400).json({ error: 'Unsupported file format. Use CSV, JSON, or XML' });
         return;
     }
 
-    await ticketService.bulkCreateTickets(tickets);
+    await ticketService.bulkCreateTickets(validationResult.validTickets);
     res.status(200).json(validationResult);
   } catch (error) {
     res.status(500).json({ error: 'Import failed', details: error instanceof Error ? error.message : 'Unknown error' });

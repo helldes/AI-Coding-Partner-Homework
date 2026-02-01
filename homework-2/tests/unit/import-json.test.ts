@@ -101,15 +101,15 @@ describe('JSON Import', () => {
       }
     ]);
 
-    const tickets = await importService.extractValidTicketsFromJSON(Buffer.from(jsonData));
+    const result = await importService.parseJSON(Buffer.from(jsonData));
 
-    expect(tickets.length).toBe(1);
-    expect(tickets[0].customer_id).toBe('CUST001');
+    expect(result.validTickets.length).toBe(1);
+    expect(result.validTickets[0].customer_id).toBe('CUST001');
   });
 
   it('should handle malformed JSON in extract method', async () => {
-    const tickets = await importService.extractValidTicketsFromJSON(Buffer.from('{invalid'));
+    const result = await importService.parseJSON(Buffer.from('{invalid'));
 
-    expect(tickets.length).toBe(0);
+    expect(result.validTickets.length).toBe(0);
   });
 });
