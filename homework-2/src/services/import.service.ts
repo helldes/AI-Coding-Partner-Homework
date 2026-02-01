@@ -132,8 +132,22 @@ export class ImportService {
     const errors: Array<{ row: number; error: string }> = [];
     let successful = 0;
 
+    const secureOptions = {
+      strict: true,
+      async: false,
+      explicitRoot: true,
+      normalize: true,
+      normalizeTags: false,
+      trim: true,
+      explicitArray: true,
+      xmlns: false,
+      dtd: false,
+      entities: false,
+      entity: false
+    } as any;
+
     return new Promise((resolve) => {
-      parseString(fileBuffer.toString(), (err: Error | null, result: any) => {
+      parseString(fileBuffer.toString(), secureOptions, (err: Error | null, result: any) => {
         if (err) {
           return resolve({
             total: 0,
@@ -181,8 +195,22 @@ export class ImportService {
   async extractValidTicketsFromXML(fileBuffer: Buffer): Promise<CreateTicketDTO[]> {
     const validTickets: CreateTicketDTO[] = [];
 
+    const secureOptions = {
+      strict: true,
+      async: false,
+      explicitRoot: true,
+      normalize: true,
+      normalizeTags: false,
+      trim: true,
+      explicitArray: true,
+      xmlns: false,
+      dtd: false,
+      entities: false,
+      entity: false
+    } as any;
+
     return new Promise((resolve) => {
-      parseString(fileBuffer.toString(), (err: Error | null, result: any) => {
+      parseString(fileBuffer.toString(), secureOptions, (err: Error | null, result: any) => {
         if (err) {
           return resolve(validTickets);
         }
