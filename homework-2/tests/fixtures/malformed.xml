@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tickets>
+  <ticket>
+    <customer_id>MAL001
+    <customer_email>malformed@test.com</customer_email>
+  </ticket>

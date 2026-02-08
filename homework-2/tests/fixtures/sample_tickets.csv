@@ -1,0 +1,51 @@
+customer_id,customer_email,customer_name,subject,description,category,priority,tags,source,browser,device_type
+CUST001,john.doe@example.com,John Doe,Cannot login to account,I forgot my password and cannot access my account,account_access,urgent,"login,password",web_form,Chrome,desktop
+CUST002,jane.smith@example.com,Jane Smith,Application crash on startup,The app crashes immediately when I try to open it with error 500,technical_issue,high,"crash,error",email,Firefox,mobile
+CUST003,bob.wilson@example.com,Bob Wilson,Refund request,I need a refund for my last payment of $99.99,billing_question,medium,"refund,payment",api,Safari,desktop
+CUST004,alice.brown@example.com,Alice Brown,Dark mode feature,Would like to see a dark mode option in the settings,feature_request,low,"feature,ui",chat,Chrome,tablet
+CUST005,charlie.davis@example.com,Charlie Davis,Button not clickable,Steps to reproduce: 1. Go to checkout 2. Click submit. Expected: form submits. Actual: nothing happens,bug_report,high,"bug,checkout",web_form,Edge,desktop
+CUST006,emma.garcia@example.com,Emma Garcia,2FA not working,Two factor authentication codes are not being sent to my phone,account_access,urgent,"2fa,authentication",phone,,mobile
+CUST007,frank.martinez@example.com,Frank Martinez,Slow page load,The dashboard takes over 30 seconds to load,technical_issue,medium,"performance,slow",email,Chrome,desktop
+CUST008,grace.lopez@example.com,Grace Lopez,Invoice missing,I did not receive my invoice for last month's subscription,billing_question,medium,"invoice,billing",web_form,Firefox,desktop
+CUST009,henry.taylor@example.com,Henry Taylor,Export to PDF,Could you add the ability to export reports to PDF format,feature_request,low,"export,pdf",api,Safari,desktop
+CUST010,isabel.anderson@example.com,Isabel Anderson,Data not saving,My data keeps disappearing after I save and close the app,bug_report,urgent,"data,save",chat,Chrome,mobile
+CUST011,jack.thomas@example.com,Jack Thomas,Locked out of account,My account is locked after too many failed login attempts,account_access,high,"locked,login",web_form,Edge,desktop
+CUST012,karen.jackson@example.com,Karen Jackson,Server timeout error,Getting timeout error when trying to upload files,technical_issue,high,"timeout,upload",email,Chrome,desktop
+CUST013,larry.white@example.com,Larry White,Wrong charge amount,I was charged $199 instead of $99 for my subscription,billing_question,urgent,"charge,billing",phone,,mobile
+CUST014,mary.harris@example.com,Mary Harris,Mobile app version,When will the mobile app be available for Android,feature_request,medium,"mobile,android",web_form,Chrome,mobile
+CUST015,nathan.martin@example.com,Nathan Martin,Search returns wrong results,The search feature returns irrelevant results for my query,bug_report,medium,"search,bug",api,Firefox,desktop
+CUST016,olivia.thompson@example.com,Olivia Thompson,Cannot reset password,Password reset email is not arriving in my inbox,account_access,urgent,"password,reset",chat,Safari,desktop
+CUST017,paul.garcia@example.com,Paul Garcia,Connection keeps dropping,My connection to the server keeps dropping every few minutes,technical_issue,high,"connection,network",email,Chrome,desktop
+CUST018,quinn.martinez@example.com,Quinn Martinez,Cancel subscription,How do I cancel my monthly subscription,billing_question,low,"cancel,subscription",web_form,Edge,tablet
+CUST019,rachel.robinson@example.com,Rachel Robinson,Keyboard shortcuts,Please add keyboard shortcuts for common actions,feature_request,low,"shortcuts,keyboard",api,Chrome,desktop
+CUST020,steve.clark@example.com,Steve Clark,Image upload fails,Cannot upload images larger than 5MB,bug_report,medium,"upload,images",phone,,mobile
+CUST021,tina.rodriguez@example.com,Tina Rodriguez,Security alert received,I received a suspicious security alert about my account,account_access,urgent,"security,alert",web_form,Firefox,desktop
+CUST022,uma.lee@example.com,Uma Lee,Database error message,Getting error: Database connection failed,technical_issue,urgent,"database,error",email,Chrome,desktop
+CUST023,victor.walker@example.com,Victor Walker,Duplicate billing,I was billed twice for the same subscription period,billing_question,high,"duplicate,billing",chat,Safari,mobile
+CUST024,wendy.hall@example.com,Wendy Hall,Integration with Slack,Would love to see Slack integration for notifications,feature_request,medium,"integration,slack",api,Chrome,desktop
+CUST025,xavier.allen@example.com,Xavier Allen,Form validation broken,Form accepts invalid email addresses,bug_report,high,"validation,form",web_form,Edge,desktop
+CUST026,yolanda.young@example.com,Yolanda Young,Account verification,Need help verifying my account email address,account_access,medium,"verification,email",phone,,desktop
+CUST027,zachary.king@example.com,Zachary King,Memory leak issue,Application uses more and more memory over time,technical_issue,high,"memory,leak",email,Chrome,desktop
+CUST028,amy.wright@example.com,Amy Wright,Tax invoice request,Need a tax invoice for my company's records,billing_question,low,"tax,invoice",web_form,Firefox,desktop
+CUST029,brian.lopez@example.com,Brian Lopez,API rate limits,Please increase API rate limits for enterprise users,feature_request,medium,"api,limits",api,Safari,desktop
+CUST030,carla.hill@example.com,Carla Hill,Date picker bug,Date picker shows wrong month when opened,bug_report,low,"date,picker",chat,Chrome,tablet
+CUST031,david.scott@example.com,David Scott,Multi-factor authentication,Cannot enable multi-factor authentication in settings,account_access,medium,"mfa,settings",web_form,Edge,desktop
+CUST032,emily.green@example.com,Emily Green,API returns 500 error,API endpoint /users returns internal server error,technical_issue,urgent,"api,error",email,Chrome,desktop
+CUST033,fred.adams@example.com,Fred Adams,Proration question,How is proration handled when upgrading mid-cycle,billing_question,low,"proration,upgrade",phone,,mobile
+CUST034,gina.baker@example.com,Gina Baker,Batch operations,Add support for batch delete operations,feature_request,medium,"batch,delete",api,Firefox,desktop
+CUST035,harry.nelson@example.com,Harry Nelson,Dropdown menu broken,Dropdown menu options are not clickable on mobile,bug_report,high,"dropdown,mobile",web_form,Safari,mobile
+CUST036,irene.carter@example.com,Irene Carter,Login redirect issue,After login redirects to wrong page,account_access,medium,"login,redirect",chat,Chrome,desktop
+CUST037,james.mitchell@example.com,James Mitchell,Broken images,Images not loading on product pages,technical_issue,high,"images,loading",email,Edge,desktop
+CUST038,kelly.perez@example.com,Kelly Perez,Payment method update,Cannot update my credit card information,billing_question,medium,"payment,update",web_form,Chrome,tablet
+CUST039,luke.roberts@example.com,Luke Roberts,Webhook support,Please add webhook support for real-time notifications,feature_request,high,"webhook,notifications",api,Firefox,desktop
+CUST040,monica.turner@example.com,Monica Turner,CSS styling issue,Button styling is broken on Safari browser,bug_report,low,"css,styling",phone,,desktop
+CUST041,nick.phillips@example.com,Nick Phillips,Session timeout,Session expires too quickly forcing frequent re-login,account_access,medium,"session,timeout",web_form,Safari,desktop
+CUST042,olivia.campbell@example.com,Olivia Campbell,CORS error,Getting CORS error when calling API from our domain,technical_issue,high,"cors,api",email,Chrome,desktop
+CUST043,peter.parker@example.com,Peter Parker,Billing cycle change,Want to change billing cycle from monthly to annual,billing_question,low,"billing,cycle",chat,Edge,mobile
+CUST044,queenie.evans@example.com,Queenie Evans,Notification preferences,Add ability to customize notification preferences,feature_request,medium,"notifications,preferences",api,Chrome,desktop
+CUST045,roger.edwards@example.com,Roger Edwards,Infinite loop bug,Application enters infinite loop on certain input,bug_report,urgent,"loop,crash",web_form,Firefox,desktop
+CUST046,sarah.collins@example.com,Sarah Collins,Change email address,How do I change my account email address,account_access,low,"email,change",phone,,tablet
+CUST047,thomas.stewart@example.com,Thomas Stewart,SSL certificate error,Browser shows SSL certificate warning,technical_issue,urgent,"ssl,certificate",email,Safari,desktop
+CUST048,ursula.sanchez@example.com,Ursula Sanchez,Discount code not working,My promotional discount code is not being applied,billing_question,medium,"discount,promo",web_form,Chrome,desktop
+CUST049,vincent.morris@example.com,Vincent Morris,Localization support,Add support for Spanish language,feature_request,medium,"localization,language",api,Edge,desktop
+CUST050,wilma.rogers@example.com,Wilma Rogers,Null pointer exception,Getting null pointer exception on user profile page,bug_report,high,"exception,error",chat,Chrome,mobile
