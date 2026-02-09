@@ -1,0 +1,18 @@
+[
+  {
+    "customer_id": "INVALID001",
+    "customer_email": "invalid-email-format",
+    "customer_name": "Invalid User",
+    "subject": "Test",
+    "description": "Too short",
+    "metadata": { "source": "web_form" }
+  },
+  {
+    "customer_id": "",
+    "customer_email": "test@test.com",
+    "customer_name": "No ID",
+    "subject": "Test",
+    "description": "Valid description here",
+    "metadata": { "source": "email" }
+  }
+]

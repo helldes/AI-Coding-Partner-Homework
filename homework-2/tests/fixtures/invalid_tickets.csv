@@ -1,0 +1,4 @@
+customer_id,customer_email,customer_name,subject,description,source
+INVALID001,not-an-email,Bad User,Test,Short,web_form
+INVALID002,test@test.com,,No Name,This is a test,email
+INVALID003,another@test.com,User,Very Long Subject That Exceeds The Maximum Allowed Length Of Two Hundred Characters And Should Be Rejected By The Validation Layer Because It Is Way Too Long For A Subject Line In Our System,Description here,api
